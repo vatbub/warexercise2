@@ -1,15 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
   #%L
-  Hello World
+  HelloWorld
   %%
   Copyright (C) 2016 - 2017 Frederik Kammel
   %%
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
-  
+
        http://www.apache.org/licenses/LICENSE-2.0
-  
+
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,35 +18,41 @@
   limitations under the License.
   #L%
   -->
-<web-app xmlns="http://java.sun.com/xml/ns/javaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
-	      http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-         version="2.5">
 
-    <display-name>Hello World Application</display-name>
 
-    <servlet>
-        <servlet-name>mvc-dispatcher</servlet-name>
-        <servlet-class>
+<xsd:web-app
+        version="3.0"
+        xmlns:xsd="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+    <xsd:display-name>Archetype Created Web Application</xsd:display-name>
+
+    <xsd:context-param>
+        <xsd:param-name>contextConfigLocation</xsd:param-name>
+        <xsd:param-value>/WEB-INF/view-resolver-servlet.xml</xsd:param-value>
+    </xsd:context-param>
+
+    <xsd:servlet>
+        <xsd:servlet-name>mvc-dispatcher</xsd:servlet-name>
+        <xsd:servlet-class>
             org.springframework.web.servlet.DispatcherServlet
-        </servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
+        </xsd:servlet-class>
+        <xsd:load-on-startup>1</xsd:load-on-startup>
+        <xsd:init-param>
+            <xsd:param-name>contextConfigLocation</xsd:param-name>
+            <xsd:param-value></xsd:param-value>
+        </xsd:init-param>
+    </xsd:servlet>
 
-    <servlet-mapping>
-        <servlet-name>mvc-dispatcher</servlet-name>
-        <url-pattern>/</url-pattern>
-    </servlet-mapping>
+    <xsd:servlet-mapping>
+        <xsd:servlet-name>mvc-dispatcher</xsd:servlet-name>
+        <xsd:url-pattern>/</xsd:url-pattern>
+    </xsd:servlet-mapping>
 
-    <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/mvc-dispatcher-servlet.xml</param-value>
-    </context-param>
-
-    <listener>
-        <listener-class>
+    <xsd:listener>
+        <xsd:listener-class>
             org.springframework.web.context.ContextLoaderListener
-        </listener-class>
-    </listener>
-</web-app>
+        </xsd:listener-class>
+    </xsd:listener>
+</xsd:web-app>
