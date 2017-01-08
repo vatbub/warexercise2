@@ -18,7 +18,8 @@ notifications:
     - vatbub123+travisbuildnotification@googlemail.com
     on_success: never
 on_failure: always
-before_deploy: mvn clean org.apache.maven.plugins:maven-dependency-plugin:2.8:copy -Dartifact=com.github.jsimone:webapp-runner:8.0.30.2 -DdestFileName=webapp-runner.jar
+before_deploy: mvn clean org.apache.maven.plugins:maven-dependency-plugin:2.8:copy
+  -Dartifact=com.github.jsimone:webapp-runner:8.0.30.2 -DdestFileName=webapp-runner.jar
 deploy:
   provider: heroku
   app: hello-world-45536
@@ -26,4 +27,4 @@ deploy:
   on:
     repo: vatbub/warexercise2
   api_key:
-    secure: QUBcL0x7XNGS4+CurBJ9IIYVHKMV4yXl1ttF7g6j/17L+joGaAsAQXt5rY2gTSFOcZ/B5iy0/C0VeJ7vtS2vfTcdDfqvZF62KN+hw/j/8P2SHZyZhmb9kKmPDYfIEpPEJoQ+U6qWcjnoahxgMT2/OwvIJkt2iGFkZbPeLYi0suorkP/hqifBKEhPnM/h/tRdXXpLfY54re1g7cdwWzm37xZnsK0r+XCRJqGrfrReihj183JH124S/OLewZfdY9fSz6G+8aYcWil6lg5m0+EpMEPzYGJh9dqntZg1iLtZhF7z62IlGqolTl7aDrRU8BWzoHncCurnfvN019ZpaTq3PXurNnamaqIHE3uhIBILghG2i5bXWAAPZiXoNOYd5NQwORkWKBbirFdlIrAM+zvddfgSfZN0fl70KOi7l1J/dJ8HX1ST0eGmqIn1vQBtwRwaV43M3cFSyPVNP51+zfDcRlmw1bpMOBXl/CWUol4NdclodktL/UfCAPQxrlk4XqxzoBoF8R+MWHFGESGEMsOqzHbbDuKb8KotmantVr4o/pSHLcRDMqtY/zaKtiUqQei2seVdCJDauVTNBOTCcfUmAqqtfD3hX2AWYVqnioDAaXviWkVnFcLbXmuzdtfS//+EIUBnIhD0bugmidqOzjFO529/azUKXMpducewB7k/8g4=
+    secure: C86fAgUf5/YYUcjbEROE1phC3squojgqNm5e+YmxHmpht1NFv5Qo5rOehvkaRLjws2bu7A3PhR5+jpPob+MEJhLkM8IydSXx5ConZia9SVOORrDKqVeAPbC1s7Sy8+OaOvTc3PYpYE0CHIqDBkL3ArJ7RX9lpNULgtqHmrZPFDe2ljA6v7dpJnuoGvk3qRE38a2qAt95BudNjHzTelgwRxjc0nZLYWLtWjYulJ9I8571I6VRLRhSgCyhEK0WkAEh2mnCTePIrrFRoWfqt647y13a2O8hpaegsdy2meS1EWsLwru1X+6a4jnqyDVL35R4WCkjiz75PRdRY+vWmb4YX9L/7mHz3NpKApwtQIMizOy8Ik9MaqAJGdjRqWa7KMbx1gVg1+6yTOJNGqcmwN9Hs+uIOiNOL2HbRCxKtOIbXlzrvJMtDB1Qig0gH/DnwXHttDPXHdx80l7shQHp03jcXWa79AAUHCJ4JCzCvoXEeqRPBuZUJyhKu8CACiM8vDsbwWEjw9IhN0yVjWS4IUqa+MtwFIgLwaz5owfJ2JZi1rEhFI0Me2ypHNtUkqMhZx5544eLrmcwOr/4NqEmF0H1dmqjB0Tgmp6j6dYiI7H0hj3FOEi4mwJelFUsKljjmeTpICYzqBE+6U/7Nz7OYSBQib4efZEAbYLYPDQrCsmZE0k=
