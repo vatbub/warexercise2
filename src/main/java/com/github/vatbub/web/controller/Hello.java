@@ -60,7 +60,7 @@ public final class Hello extends HttpServlet {
         writer.println("<table border=\"0\" cellpadding=\"10\">");
         writer.println("<tr>");
         writer.println("<td>");
-        writer.println("<img src=\"https://openclipart.org/download/244750/Happy-Peace-Smiley-Face.svg\">");
+        writer.println("<img src=\"images/icon.jpg\">");
         writer.println("</td>");
         writer.println("<td>");
         writer.println("<h1>Sample Application Servlet</h1>");
