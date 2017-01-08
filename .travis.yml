@@ -9,6 +9,7 @@ cache:
   directories:
   - "$HOME/.m2"
 install: echo Install phase has been disabled as a complete build is run during deployment
+script: mvn package
 branches:
   only:
   - master
@@ -18,8 +19,6 @@ notifications:
     - vatbub123+travisbuildnotification@googlemail.com
     on_success: never
 on_failure: always
-before_deploy: mvn clean org.apache.maven.plugins:maven-dependency-plugin:2.8:copy
-  -Dartifact=com.github.jsimone:webapp-runner:8.0.30.2 -DdestFileName=webapp-runner.jar
 deploy:
   provider: heroku
   app: hello-world-45536
