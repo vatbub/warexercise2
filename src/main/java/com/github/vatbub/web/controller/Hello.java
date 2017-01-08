@@ -79,10 +79,9 @@ public final class Hello extends HttpServlet {
         writer.println("</html>");
     }
 
-    public static String getCurrentTimeStamp() {
+    private static String getCurrentTimeStamp() {
         SimpleDateFormat sdfDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//dd/MM/yyyy
         Date now = new Date();
-        String strDate = sdfDate.format(now);
-        return strDate;
+        return sdfDate.format(now);
     }
 }
