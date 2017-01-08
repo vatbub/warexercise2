@@ -18,7 +18,7 @@ notifications:
     - vatbub123+travisbuildnotification@googlemail.com
     on_success: never
 on_failure: always
-before_deploy: mvn clean org.apache.maven.plugins:maven-dependency-plugin:2.8:copy -Dartifact=com.github.jsimone:webapp-runner:8.0.30.2 -DdestFileName=webapp-runner.jar -Dmdep.stripVersion=true
+before_deploy: mvn clean org.apache.maven.plugins:maven-dependency-plugin:2.8:copy
   -Dartifact=com.github.jsimone:webapp-runner:8.0.30.2 -DdestFileName=webapp-runner.jar
 deploy:
   provider: heroku
