@@ -21,7 +21,7 @@ on_failure: always
 deploy:
   provider: heroku
   app: hello-world-45536
-  strategy: git
+  buildpack: java
   on:
     repo: vatbub/warexercise2
   api_key:
