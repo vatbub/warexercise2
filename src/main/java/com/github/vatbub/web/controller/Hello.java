@@ -27,6 +27,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Simple Hello servlet.
@@ -70,9 +72,17 @@ public final class Hello extends HttpServlet {
 
         writer.println("This is the output of a servlet that is part of");
         writer.println("the Hello, World application.<br>");
-        writer.println("<b>If this line appears, the travis deployment worked!</b>");
+        writer.println("<b>If this line appears, the travis deployment worked!</b><br>");
+        writer.println("Current date and time is: " + getCurrentTimeStamp());
 
         writer.println("</body>");
         writer.println("</html>");
+    }
+
+    public static String getCurrentTimeStamp() {
+        SimpleDateFormat sdfDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//dd/MM/yyyy
+        Date now = new Date();
+        String strDate = sdfDate.format(now);
+        return strDate;
     }
 }
