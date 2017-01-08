@@ -9,6 +9,7 @@ cache:
   directories:
   - "$HOME/.m2"
 install: echo Install phase has been disabled as a complete build is run during deployment
+script: mvn package
 branches:
   only:
   - master
@@ -21,8 +22,7 @@ on_failure: always
 deploy:
   provider: heroku
   app: hello-world-45536
-  buildpack: java
-  strategy: anvil
+  skip_cleanup: true
   on:
     repo: vatbub/warexercise2
   api_key:
