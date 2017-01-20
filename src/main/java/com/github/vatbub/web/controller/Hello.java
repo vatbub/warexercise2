@@ -21,10 +21,13 @@ package com.github.vatbub.web.controller;
  */
 
 
+import common.StringCommon;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
@@ -53,7 +56,7 @@ public final class Hello extends HttpServlet {
 
         response.setContentType("text/html");
         PrintWriter writer = response.getWriter();
-        writer.println("<html>");
+        /*writer.println("<html>");
         writer.println("<head>");
         writer.println("<title>Sample Application Servlet Page</title>");
         writer.println("</head>");
@@ -76,7 +79,8 @@ public final class Hello extends HttpServlet {
         writer.println("Current date and time is: " + getCurrentTimeStamp());
 
         writer.println("</body>");
-        writer.println("</html>");
+        writer.println("</html>");*/
+        writer.write(StringCommon.fromFile(new File(Hello.class.getResource("index.jsp").toString())));
     }
 
     private static String getCurrentTimeStamp() {
