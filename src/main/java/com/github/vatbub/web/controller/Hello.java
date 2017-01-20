@@ -21,50 +21,25 @@ package com.github.vatbub.web.controller;
  */
 
 
-import common.StringCommon;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.net.URISyntaxException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
  * Simple Hello servlet.
  */
+@Controller
+public final class Hello  {
 
-public final class Hello extends HttpServlet {
+    @RequestMapping("/welcome")
+    public ModelAndView helloWorld() {
 
-
-    /**
-     * Respond to a GET request for the content produced by
-     * this servlet.
-     *
-     * @param request The servlet request we are processing
-     * @param response The servlet response we are producing
-     *
-     * @exception IOException if an input/output error occurs
-     * @exception ServletException if a servlet error occurs
-     */
-    public void doGet(HttpServletRequest request,
-                      HttpServletResponse response)
-            throws IOException, ServletException {
-
-        response.setContentType("text/html");
-        PrintWriter writer = response.getWriter();
-
-        try {
-            String jsp = StringCommon.fromFile(new File(Hello.class.getResource("/src/main/webapp/index.jsp").toURI()));
-            jsp = jsp.replace("{DateTime}", getCurrentTimeStamp());
-            writer.write(jsp);
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        }
+        String message = "<br><div style='text-align:center;'>"
+                + "<h3>********** Hello World, Spring MVC Tutorial</h3>This message is coming from CrunchifyHelloWorld.java **********</div><br><br>";
+        return new ModelAndView("welcome", "message", message);
     }
 
     private static String getCurrentTimeStamp() {
