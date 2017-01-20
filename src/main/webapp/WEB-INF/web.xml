@@ -33,7 +33,7 @@
 
     <servlet>
         <servlet-name>HelloServlet</servlet-name>
-        <servlet-class>com.github.vatbub.web.controller.Hello</servlet-class>
+        <jsp-file>/index.jsp</jsp-file>
     </servlet>
 
     <servlet-mapping>
