@@ -42,6 +42,7 @@ public final class Hello  {
         return new ModelAndView("welcome", "message", message);
     }
 
+    @SuppressWarnings("unused")
     private static String getCurrentTimeStamp() {
         SimpleDateFormat sdfDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//dd/MM/yyyy
         Date now = new Date();
