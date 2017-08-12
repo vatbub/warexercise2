@@ -32,7 +32,14 @@ import java.util.Date;
  * Simple Hello servlet.
  */
 @Controller
-public final class Hello  {
+public final class Hello {
+
+    @SuppressWarnings("unused")
+    private static String getCurrentTimeStamp() {
+        SimpleDateFormat sdfDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//dd/MM/yyyy
+        Date now = new Date();
+        return sdfDate.format(now);
+    }
 
     @RequestMapping("/welcome")
     public ModelAndView helloWorld() {
@@ -40,12 +47,5 @@ public final class Hello  {
         String message = "<br><div style='text-align:center;'>"
                 + "<h3>********** Hello World, Spring MVC Tutorial</h3>This message is coming from CrunchifyHelloWorld.java **********</div><br><br>";
         return new ModelAndView("welcome", "message", message);
-    }
-
-    @SuppressWarnings("unused")
-    private static String getCurrentTimeStamp() {
-        SimpleDateFormat sdfDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//dd/MM/yyyy
-        Date now = new Date();
-        return sdfDate.format(now);
     }
 }
