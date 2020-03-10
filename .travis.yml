@@ -9,9 +9,6 @@ install:
 - tar -xf jdk-8u191-linux-x64.tar.gz
 - export JAVA_HOME=/home/travis/build/vatbub/warexercise2/jdk1.8.0_191/
 script: mvn package
-branches:
-  only:
-  - master
 notifications:
   email:
     recipients:
